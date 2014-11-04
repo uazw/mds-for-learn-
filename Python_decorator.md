@@ -23,20 +23,19 @@ python中的装饰器类似于JAVA中的AOP编程
 	def boo():
 		print 'aaa'
 
-
-###2.类实现
-
-####1.无参实现
+####2.类实现
 
 	class A:
-	def __init__(self, func):
-		self.func = func
-	def __call__(self, *args):
-		func(*args)
+		def __init__(self, func):
+			self.func = func
+		def __call__(self, *args):
+			func(*args)
 
 	@A
 	def book():
 		print 'bbbb'
+
+
 ##2.方法装饰器
 
 ##3.类装饰器
