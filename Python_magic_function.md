@@ -1,0 +1,1 @@
+#Python\_magic_function
