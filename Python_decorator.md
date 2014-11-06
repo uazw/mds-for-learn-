@@ -2,14 +2,15 @@
 python中的装饰器类似于JAVA中的AOP编程  
 在不改变原本代码的情况下增加功能  
 或者将与逻辑无关的代码（例如计时）与逻辑隔离  
-装饰器一般可以近似等价于
+装饰器可以由函数实现也可以由类实现  
+装饰器本质是返回一个**可调用对象**
+
+##1.函数装饰器
+
+函数装饰器一般等价于
 
 	foo(func)=>wrapper(func_args)
 	A__init__(func).__call__(*args)
-
-装饰器可以由函数实现也可以由类实现
-
-##1.函数装饰器
 
 ###1.函数实现
 
@@ -23,6 +24,28 @@ python中的装饰器类似于JAVA中的AOP编程
 	def boo():
 		print 'aaa'
 
+####2.有参实现
+	def d1(a, b):
+		def d2(func):
+			print a, b
+			def wrapper(*args):
+				func(*args)
+			return wrapper
+		return d2
+
+	def b1(a, b):
+		class wrapper(object):
+			def __init__(self, func):
+				super(wrapper, self).__init__()
+				self.func = func
+			def __call__(self, *args):
+				print a, b
+				self.func(*args)
+		return wrapper
+@b1(1, 2)
+def bcc():
+	print 'aa'
+由以上可以看书有参比无参多一层调用
 ####2.类实现
 
 	class A:
