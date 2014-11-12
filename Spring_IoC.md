@@ -58,3 +58,25 @@ Autowiring modes:
 
 1. @PostConstruct or xml init-method
 2. @PreDestroy	or xml destroy-method
+
+###配置细节
+
+1. XML配置  
+用XML配置需要引入外部properties文件:  
+
+		<context:property-placeholder location="classpath:db.properties" />
+
+2. JavaCode 配置
+	1. @PropertySource("classpath:db.properties")注解配置类
+	2. @Autowired Environment
+	3. 通过env.getProperty()方法获取
+
+
+3. JavaCode Cteriec配置  
+这种配置需要javacode和xml两种方式一起使用  
+但是以javaCode为中心
+XML配置依然如第一种方式
+JavaCode改为  
+	1. @ImportSource("classpath:bean.xml")
+	2. @Value("${db.username}") 注解到一个filed
+

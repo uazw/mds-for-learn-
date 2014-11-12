@@ -13,15 +13,15 @@ AOP即面向切面编程
 
 #### AOP 指示集
 
-1. [args() 用于限定通知的参数](#args_example)
-2. @args() 用于限定指定注解标注的方法
+1. args() 用于限定通知的参数
+2. @args() 用于限定指定注解标注参数的方法
 3. execution()  用于匹配执行方法
 4. this()
-5. target()  用于限定实现了指定接口对象
-6. @target() 限定匹配对象是标注的指定的注解
+5. target()
+6. @target()
 7. within() 限定类型或者包
 8. @within() 限定匹配类型是标注了指定类型的注解
-9. @annotation  限定匹配方法实现了指定类型的注解
+9. @annotation  限定匹配方法标注了指定类型的注解
 10. bean() 用于限定bean名字
 
 #####高效AOP
@@ -68,25 +68,6 @@ the execution of any public method:
 • any join point (method execution only in Spring AOP) within the service package or a sub-package:
 
 	within(com.xyz.service..*)
-
-• any join point (method execution only in Spring AOP) where the proxy implements the AccountService interface:
-
-	this(com.xyz.service.AccountService)
-
-• any join point (method execution only in Spring AOP) where the target object implements the AccountService interface:
-
-	target(com.xyz.service.AccountService)
-
-<h5 id='args_example'></h5>
-• any join point (method execution only in Spring AOP) which takes a single parameter, and where the
-argument passed at runtime is Serializable:
-	
-	args(java.io.Serializable)
-
-• any join point (method execution only in Spring AOP) where the target object has an
-@Transactional annotation:
-	
-	@target(org.springframework.transaction.annotation.Transactional)
 
 ####XML
 
