@@ -107,4 +107,6 @@ the execution of any public method:
     	}
 	}
 
-@Pointcut注解的方法必须是void
+@Pointcut注解的方法必须是void  
+@Aspect 注解过的bean 仍然是个普通Bean需要手动注册
+或者用@Compoent
