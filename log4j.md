@@ -8,15 +8,26 @@ log4j的一般配置如下
 	log4j.appender.special_appender_name=where_to_appender
 	log4j.appender.special_appender_name.layout=*Layout
 	log4j.appender.special_appender_name.layout.*Pattern=special_pattern
+
 ##Logger
 
-+ logger_name  
++ logger\_name  
 由以下代码决定
 
 		public static Logger log = Logger.getLogger(HelloWorld.class.getName());
-+ logger_name  
++ logger\_level  
 	
 		ALL < DEBUG < INFO < WARN < ERROR < FATAL < OFF.
+
+###rootLogger
+
+rootLogger是所有logger的父类
+子类可以覆盖logger\_level 和 special\_appender_name
+
+###category
+
+		log4j.category.special_category_name=logger_level, special_appender_name
+
 当logger_level为ERROR的时候只会显示ERROR FATAL OFF的消息
 
 ##Appender
@@ -33,7 +44,7 @@ DailyRollingAppender  每天建立新日志文件
 HTMLLayout  
 XMLLayout
 <h5 id='pl'></h5>
-PatternLayout参数如下
+PatternLayout参数如下  
 ![sdf](/pl.png)
 <h5 id='example'></h5>
 一个典型的例子如下  
