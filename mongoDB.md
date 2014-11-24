@@ -74,3 +74,5 @@ find({条件}, {其他条件})
 **push**用于添加数组元素 可与**each**搭配使用一次添加多个
 
 	update(Criteria, '$push': {'key': '$each': [v1, v2, v3]})
+
+##副本集

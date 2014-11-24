@@ -55,28 +55,18 @@ spring mvc 是一个强大并且灵活的web框架
 当该注解标注在方法上表明这个方法在@RequestMapping之前执行(也可以获取到request的参数)
 
 ####On arguments
-当标注在参数上表明要从其他地方需找这个实例
-1.  @SessionAttributes 用过这个的注解
-2.  @ModelAttributes 在同一个控制器用过这个的方法
+当标注在参数上表明要从其他地方需找这个实例  
+1.  @SessionAttributes 用过这个的注解  
+2.  @ModelAttributes 在同一个控制器用过这个的方法  
 3.  data binding从请求参数中获取 类似于 ModelDriven 
 
+###@ControllerAdvice
 
-###Interceptor
+* basePackages 包名
+* assignableTypes 类名
 
-org.springframework.web.servlet.HandlerInterceptor
-为接口  
-org.springframework.web.servlet.handler.HandlerInterceptorAdapter
-为默认实现
 
-* boolean **preHandle**(HttpServletRequest request,HttpServletResponse response, Object handler)
-返回值true 继续执行
-返回值flase 中断执行流程由拦截器负责结果
-
-* void **postHandle**(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView):
-
-* void **afterCompletion**(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
-该方法在视图渲染后执行
-
-####for more detail check me [intercepter]
-
-[intercepter]: http://www.journaldev.com/2676/spring-mvc-interceptors-example-handlerinterceptor-and-handlerinterceptoradapter
+用该注解标注的类可以有以下方法注解
+* @ExceptionHandler
+* @InitBinder  
+* @ModelAttribute
