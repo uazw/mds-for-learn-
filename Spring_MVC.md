@@ -6,7 +6,7 @@ spring mvc 是一个强大并且灵活的web框架
 * @RestController 
 * [@RequestMapping 用于注解到方法](#rm)
 * [@ModelAttribute](#mt)
-* @SessionAttributes 用法是将对象放入Model中就可
+* @SessionAttributes 标注过的controller会特殊处理属性，放入Session中，但是只能用于单一HTTP事务
 
 
 <h5 id='rm'></h5>
@@ -21,7 +21,7 @@ spring mvc 是一个强大并且灵活的web框架
 
 #####supported arguments
 * **ServletRequest** or **HttpServletRequest**  
-* **Session** 线程不安全需要设置RequestMappingHandlerAdapters synchronizeOnSession true  
+* **Session** 非线程安全 需要设置RequestMappingHandlerAdapters synchronizeOnSession true  
 * **org.springframework.web.context.request.WebRequest org.springframework.web.context.request.NativeWebRequest**  
 * **java.util.Locale**  
 * **java.io.OutputStream or java.io.Writer**  
@@ -56,7 +56,7 @@ spring mvc 是一个强大并且灵活的web框架
 
 ####On arguments
 当标注在参数上表明要从其他地方需找这个实例  
-1.  @SessionAttributes 用过这个的注解  
+1.  @SessionAttributes 同一controller被注解过  
 2.  @ModelAttributes 在同一个控制器用过这个的方法  
 3.  data binding从请求参数中获取 类似于 ModelDriven 
 
