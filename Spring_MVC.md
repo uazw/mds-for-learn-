@@ -29,7 +29,7 @@ spring mvc 是一个强大并且灵活的web框架
 * **@PathVariable** 用来注解参数提取URI的参数  
 * **@RequestParam** 请求中的参数  
 * **@RequestHeaders** HTTP首部  
-* **@RequestBody** 请求体  
+* **@RequestBody** 请求头中Content-Type为非application/x-www-form-urlencoded或multipart/form-data的内容  
 * **@CookieValue** 获取Cookie中的值
 * **@RequestPart** 用来上传文件  
 * **@HttpEntity** 用来获取HTTP headers and content  
