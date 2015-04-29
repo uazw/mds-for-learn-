@@ -14,3 +14,6 @@
 <span id="method_area" />
 
 
+###堆区
+
+###虚拟栈区
