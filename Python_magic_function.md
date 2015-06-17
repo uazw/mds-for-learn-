@@ -4,7 +4,7 @@
 ##Object creation
 
 ###1.\_\_new\_\_
-cls()  _\_new\_\_(cls, ....) ==>  **对象构造器**
+cls()  _\_new__(cls, ....) ==>  **对象构造器**
 对象构造器
 
 ###2.\_\_init\_\_
@@ -52,7 +52,7 @@ cls()  _\_new\_\_(cls, ....) ==>  **对象构造器**
 ###12.\_\_getattr\_\_
 \_\_getattr\_\_(self, name) ==> **对象属性不存在的时候调用**
 
-###12.\_\getattribute\_\_
-\_\getattribute\_\_(self, name) ==> **获取对象属性时调用**
+###12. \_\_getattribute\_\_
+\_\_getattribute\_\_(self, name) ==> **获取对象属性时调用**
 
 http://www.ironpythoninaction.com/magic-methods.html#id19
