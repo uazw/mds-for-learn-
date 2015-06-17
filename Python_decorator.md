@@ -9,9 +9,13 @@ python中的装饰器类似于JAVA中的AOP编程
 
 函数装饰器一般等价于
 
-	foo(func)=>wrapper(func_args)
+	foo(func)(func_args)
 	A__init__(func).__call__(*args)
 
+或者等于
+	
+	foo(a,b)(func)(func_args)
+	
 ###1.函数实现
 
 ####1.无参实现
@@ -42,9 +46,10 @@ python中的装饰器类似于JAVA中的AOP编程
 				print a, b
 				self.func(*args)
 		return wrapper
-@b1(1, 2)
-def bcc():
-	print 'aa'
+	
+	@b1(1, 2)
+	def bcc():
+		print 'aa'
 由以上可以看书有参比无参多一层调用
 
 ####2.类实现
